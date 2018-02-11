@@ -1,0 +1,18 @@
+[
+{from:'MATH003', to:'MATH008'},
+{from:'MATH008', to:'MATH013'},
+{from:'PHYS013', to:'PHYS014'},
+{from:'CHEM005', to:'CHEM006'},
+{from:'MATH003', to:'ENGS21'},
+{from:'MATH013', to:'ENGS22'},
+{from:'PHYS014', to:'ENGS22'},
+{from:'ENGS20', to:'ENGS22'},
+{from:'MATH013', to:'ENGS25'},
+{from:'PHYS014', to:'ENGS25'},
+{from:'ENGS20', to:'ENGS25'},
+{from:'ENGS22', to:'ENGS36'},
+{from:'ENGS25', to:'ENGS36'},
+{from:'CHEM005', to:'ENGS36'},
+]
+
+['MATH003','MATH008','MATH013','PHYS013','PHYS014','CHEM005','CHEM006','ENGS20','ENGS21','ENGS22','ENGS25','ENGS36']

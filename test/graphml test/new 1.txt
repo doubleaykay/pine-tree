@@ -1,0 +1,35 @@
+[
+{from:'MATH003', to:'MATH008'},
+{from:'MATH008', to:'MATH013'},
+{from:'PHYS013', to:'PHYS014'},
+{from:'CHEM005', to:'CHEM006'},
+]
+
+
+
+[‘MATH003','MATH008','MATH013','PHYS013','PHYS014','CHEM005','CHEM006','ENGS20']
+
+
+<edge source="MATH003" target="MATH008"/>
+<edge source="MATH008" target="MATH013"/>
+<edge source="PHYS013" target="PHYS014"/>
+<edge source="CHEM005" target="CHEM006"/>
+<edge source="MATH003" target="ENGS21"/>
+<edge source="MATH013" target="ENGS22"/>
+<edge source="PHYS014" target="ENGS22"/>
+<edge source="ENGS20" target="ENGS22"/>
+<edge source="MATH013" target="ENGS25"/>
+<edge source="PHYS014" target="ENGS25"/>
+<edge source="ENGS20" target="ENGS25"/>
+<edge source="ENGS22" target="ENGS36"/>
+<edge source="ENGS25" target="ENGS36"/>
+<edge source="CHEM005" target="ENGS36"/>
+
+<node id="MATH003”/>
+<node id="MATH008”/>
+<node id="MATH013”/>
+<node id="PHYS013”/>
+<node id="PHYS014”/>
+<node id="CHEM005”/>
+<node id="CHEM006”/>
+<node id="ENGS20”/>
