@@ -9,13 +9,13 @@ def print_class():
        page = requests.get('http://dartmouth.smartcatalogiq.com/en/current/orc/Departments-Programs-Undergraduate/Chemistry/CHEM-Chemistry-Undergraduate/CHEM-' + str(class_number))
        class_number += 1
        tree = html.fromstring(page.content)
-       prereq = tree.xpath('//a[@class="sc-courselink"]/text()')
-       print(prereq)
-   #page = requests.get('http://dartmouth.smartcatalogiq.com/en/current/orc/Departments-Programs-Undergraduate/Chemistry/CHEM-Chemistry-Undergraduate/CHEM-' + str(x))
-   
-   
-   #title = tree.xpath('//span/text()')
-   
-   #print(title)
-
+       title = tree.xpath('//span/text()')
+       if title:
+          title.remove('\r\n\r\n\t')
+          title.remove(' >\r\n')
+          title.remove('\r\n\r\n\r\n')
+          prereq = tree.xpath('//a[@class="sc-courselink"]/text()')
+          print('T:' + str(title))
+          print(prereq)
+       
 print_class()
