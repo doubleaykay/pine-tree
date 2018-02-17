@@ -55,6 +55,62 @@ var cy = cytoscape({
         target: 'ENGS 022'
       }
     },
+    {
+      data: {
+        id: '7',
+        source: 'PHYS 014',
+        target: 'ENGS 022'
+      }
+    },
+    {
+      data: {
+        id: '8',
+        source: 'ENGS 020',
+        target: 'ENGS 022'
+      }
+    },
+    {
+      data: {
+        id: '9',
+        source: 'MATH 013',
+        target: 'ENGS 025'
+      }
+    },
+    {
+      data: {
+        id: '10',
+        source: 'PHYS 014',
+        target: 'ENGS 025'
+      }
+    },
+    {
+      data: {
+        id: '11',
+        source: 'ENGS 020',
+        target: 'ENGS 025'
+      }
+    },
+    {
+      data: {
+        id: '12',
+        source: 'ENGS 022',
+        target: 'ENGS 036'
+      }
+    },
+    {
+      data: {
+        id: '13',
+        source: 'ENGS 025',
+        target: 'ENGS 036'
+      }
+    },
+    {
+      data: {
+        id: '14',
+        source: 'CHEM 005',
+        target: 'ENGS 036'
+      }
+    },
 
   ],
 
