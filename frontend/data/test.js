@@ -13,34 +13,11 @@ var cy = cytoscape({
     { data: { id: 'ENGS 036', class: 'ENGS 036' } },
     { data: { id: 'CHEM 005', class: 'CHEM 005' } },
     { data: { id: 'CHEM 006', class: 'CHEM 006' } },
-    {
-      data: {
-        id: '1',
-        source: 'MATH 003',
-        target: 'MATH 008'
-      }
-    },
-    {
-      data: {
-        id: '2',
-        source: 'MATH 008',
-        target: 'MATH 013'
-      }
-    },
-    {
-      data: {
-        id: '3',
-        source: 'CHEM 005',
-        target: 'CHEM 006'
-      }
-    },
-    {
-      data: {
-        id: '4',
-        source: 'PHYS 013',
-        target: 'PHYS 014'
-      }
-    },
+
+    { data: { id: '1', source: 'MATH 003', target: 'MATH 008' } },
+    { data: { id: '2', source: 'MATH 008', target: 'MATH 013' } },
+    { data: { id: '3', source: 'CHEM 005', target: 'CHEM 006' } },
+    { data: { id: '4', source: 'PHYS 013', target: 'PHYS 014' } },
     {
       data: {
         id: '5',
@@ -120,7 +97,15 @@ var cy = cytoscape({
       style: {
         'label': 'data(class)',
       }
-    }
+    },
+    {
+      selector: 'edge',
+      style: {
+        'curve-style': 'bezier',
+        'width': 4,
+        'target-arrow-shape': 'triangle',
+      }
+    },
   ],
 
   layout: {
