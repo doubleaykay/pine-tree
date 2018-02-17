@@ -22,7 +22,7 @@ for link in links:
 		courselinks = depttree.xpath('//a/@href')
 		print courselinks
 		for l in courselinks:
-			f.write('"'+l+'",'+'\n')
+			f.write('"http://dartmouth.smartcatalogiq.com'+l+'",'+'\n')
 
 f.write("]")
 f.close()
