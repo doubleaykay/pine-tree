@@ -8,8 +8,8 @@ import links
 f = open("nodes.js", "w")
 f2 = open("edges.js", "w")
 
-f.write("'nodes':[\n")
-f2.write("'edges':[\n")
+f.write("nodes:[\n")
+f2.write("edges:[\n")
 
 i = 1
 
@@ -39,17 +39,17 @@ for link in links.links:
 	  print(pres)
 	  print(offered)
 	  print(distribs)
-	  f.write('{ "data": { "id": "')
+	  f.write('{ data: { id: "')
 	  f.write(title)
-	  f.write('", "class": "')
+	  f.write('", class: "')
 	  f.write(title)
-	  f.write('", "title": "')
+	  f.write('", title: "')
 	  f.write(fulltitle)
-	  f.write('", "prereqs": ')
+	  f.write('", prereqs: ')
 	  f.write(str(pres))
-	  f.write(', "distribs": ')
+	  f.write(', distribs: ')
 	  f.write(str(distribs))
-	  f.write(', "offered": ')
+	  f.write(', offered: ')
 	  f.write(str(offered))
 	  f.write("}},\n")
 	  #write to edge file
@@ -65,3 +65,4 @@ f.write("]")
 f2.write("]")
 
 f.close()
+f2.close()
