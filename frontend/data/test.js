@@ -1,7 +1,7 @@
 var cy = cytoscape({
   container: document.getElementById('cy'),
   elements: [
-    { data: { id: 'MATH 003', class: 'MATH 003' } },
+    { data: { id: 'MATH 003', class: 'MATH 003', prereqs: [] } },
     { data: { id: 'MATH 008', class: 'MATH 008' } },
     { data: { id: 'MATH 013', class: 'MATH 013' } },
     { data: { id: 'PHYS 013', class: 'PHYS 013' } },
