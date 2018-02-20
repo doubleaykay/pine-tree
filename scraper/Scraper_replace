@@ -69,6 +69,8 @@ f2.write("]")
 file = "nodes.js"
 f3 = open(file, "r")
 f4 = open("nodes_2.js", "w")
+first_line = "nodes:["
+
 
 for line in f3:
     new_line = line.replace("[]", "''")
@@ -78,6 +80,7 @@ for line in f3:
     new_line = new_line.replace('"', "'")
     new_line = new_line.replace("'s", "\\'s")
     new_line = new_line.replace("'t", "\\'t")
+    new_line = new_line.replace("nodes:", first_line)
     print(new_line)
     f4.write(new_line)
 
