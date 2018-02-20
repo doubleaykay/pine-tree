@@ -171,7 +171,7 @@ var cy = cytoscape({
     { data: { id: 'ANTH 50.09', class: 'ANTH 50.09', title: 'Language and Power', prereqs: [], distribs: ['INT', 'SOC'], offered: ['15F', '16S']}},
     { data: { id: 'ANTH 50.10', class: 'ANTH 50.10', title: 'Anthropology of War and Peace', prereqs: [], distribs: ['SOC', 'CI'], offered: ['16F', '17S']}},
     { data: { id: 'ANTH 50.16', class: 'ANTH 50.16', title: 'Anthropology of Science', prereqs: [], distribs: ['SOC', 'CI'], offered: []}},
-    { data: { id: 'ANTH 50.17', class: 'ANTH 50.17', title: 'Rites of Passage: The Biology and Culture of Life's Transitions', prereqs: [], distribs: ['SOC', 'CI'], offered: ['17F', '18S']}},
+    { data: { id: 'ANTH 50.17', class: 'ANTH 50.17', title: 'Rites of Passage: The Biology and Culture of Life\'s Transitions', prereqs: [], distribs: ['SOC', 'CI'], offered: ['17F', '18S']}},
     { data: { id: 'ANTH 50.19', class: 'ANTH 50.19', title: 'Circumpolar Archaeology and Environments', prereqs: ['NAS 30.11'], distribs: ['SOC', 'NW'], offered: ['18W', '10A']}},
     { data: { id: 'ANTH 50.20', class: 'ANTH 50.20', title: 'The Poetics and Politics of Sounds and Words', prereqs: ['MUS 17.05'], distribs: ['INT', 'SOC'], offered: ['17F', '10A']}},
     { data: { id: 'ANTH 50.21', class: 'ANTH 50.21', title: 'Visual Culture', prereqs: ['AAAS 88.17'], distribs: ['SOC', 'NW'], offered: ['17F']}},
