@@ -64,5 +64,22 @@ for link in links.links:
 f.write("]")
 f2.write("]")
 
+# Takes the nodes.js file and fixes the formatting to get rid of [, ], make it so the prereqs and distribs are 
+# between single quotes like 'INT, LIT, CI', and double quotes are replaced with single quotes and puts it into nodes_2.js
+file = "nodes.js"
+f3 = open(file, "r")
+f4 = open("nodes_2.js", "w")
+
+for line in f3:
+    new_line = line.replace("[", "")
+    new_line = new_line.replace("]", "")
+    new_line = new_line.replace("', '", ", ")
+    new_line = new_line.replace('"', "'")
+    print(new_line)
+    f4.write(new_line)
+
+f3.close()
+f4.close()
+
 f.close()
 f2.close()
