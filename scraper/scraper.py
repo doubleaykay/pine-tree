@@ -8,8 +8,8 @@ import links
 f = open("nodes.js", "w")
 f2 = open("edges.js", "w")
 
-f.write("'nodes':[\n")
-f2.write("'edges':[\n")
+f.write("nodes=[\n")
+f2.write("edges=[\n")
 
 i = 1
 
@@ -21,9 +21,9 @@ for link in links.links:
 	if title:
 	  fulltitle = re.findall(r'\b.*\b',tree.xpath('//h1/span/following-sibling::text()')[0])[0]
 	  title = title[0]
-	  prereqs = tree.xpath('//div[@id="main"]/node()[count(preceding-sibling::h3) = 1]/descendant-or-self::text()')
+	  prereqs = tree.xpath('//div[@id="main"]/node()[count(preceding-sibling::h3[contains(text(),"Prerequisite")]) = 1]/descendant-or-self::text()')
 	  pstring = "".join(prereqs[0:len(prereqs)-1])
-	  pres = re.findall(r'[A-Z]{2,}\s\d+[.]?\d+',pstring)
+	  pres = re.findall(r'[A-Z]{2,}\s\d*[.]?\d+',pstring)
 	  offeredtexts = tree.xpath('//h3[text()="Offered"]/following-sibling::text()')
 	  if offeredtexts:
 	  	offered = re.findall(r'\d\d\w',offeredtexts[0])
@@ -31,7 +31,7 @@ for link in links.links:
 	  	offered = []
 	  distribtexts = tree.xpath('//h3[contains(text(),"Distributive")]/following-sibling::text()')
 	  if distribtexts:
-	  	distribs = re.findall(r'(?<=\W)[A-Z]+?(?=\W)'," ".join([distribtexts[0]," "]))
+	  	distribs = re.findall(r'(?<!=[A-Z,a-z])[A-Z]+(?!=[A-Z,a-z])', distribtexts[0])
 	  else:
 	  	distribs = []
 	  print(title)
@@ -39,24 +39,27 @@ for link in links.links:
 	  print(pres)
 	  print(offered)
 	  print(distribs)
-	  f.write('{ "data": { "id": "')
-	  f.write(title)
-	  f.write('", "class": "')
-	  f.write(title)
-	  f.write('", "title": "')
-	  f.write(fulltitle)
-	  f.write('", "prereqs": ')
-	  f.write(str(pres))
-	  f.write(', "distribs": ')
-	  f.write(str(distribs))
-	  f.write(', "offered": ')
-	  f.write(str(offered))
+	  #print prereqs
+	  #print offeredtexts
+	  #print distribtexts
+	  f.write('{ data: { id: "')
+	  f.write(title.encode('utf-8'))
+	  f.write('", class: "')
+	  f.write(title.encode('utf-8'))
+	  f.write('", title: \'')
+	  f.write(fulltitle.encode('utf-8'))
+	  f.write('\', prereqs: ')
+	  f.write(str(pres).encode('utf-8'))
+	  f.write(', distribs: ')
+	  f.write(str(distribs).encode('utf-8'))
+	  f.write(', offered: ')
+	  f.write(str(offered).encode('utf-8'))
 	  f.write("}},\n")
 	  #write to edge file
 	  for pre in pres:
-	  	f2.write("{ data: { id: '"+str(i)+"', source: '"+pre+"', target: '"+title+"' } },\n")
-	  	i += 1
-	  if i > 100:
+	  	f2.write("{ data: { id: '"+str(i)+"', source: '"+pre.encode('utf-8')+"', target: '"+title.encode('utf-8')+"' } },\n")
+	  i += 1
+	  if i > 1500:
 	  	break
 
 
