@@ -18,7 +18,9 @@ var cy = cytoscape({
     },
   ],
 
-
+  layout: {
+    name: 'dagre',
+  },
 
   elements: {
     nodes:[
