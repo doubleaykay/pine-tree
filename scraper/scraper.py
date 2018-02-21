@@ -43,22 +43,22 @@ for link in links.links:
 	  #print offeredtexts
 	  #print distribtexts
 	  f.write('{ data: { id: "')
-	  f.write(title.encode('utf-8'))
+	  f.write(str(title.encode('utf-8')))
 	  f.write('", class: "')
-	  f.write(title.encode('utf-8'))
+	  f.write(str(title.encode('utf-8')))
 	  f.write('", title: \'')
-	  f.write(fulltitle.encode('utf-8').replace("'", "\\'").replace('"', '\\"'))
+	  f.write(str(fulltitle.encode('utf-8')).replace("'", "\\'").replace('"', '\\"'))
 	  f.write('\', prereqs: ')
-	  f.write(str(pres).encode('utf-8'))
+	  f.write(str(str(pres).encode('utf-8')))
 	  f.write(', distribs: ')
-	  f.write(str(distribs).encode('utf-8'))
+	  f.write(str(str(distribs).encode('utf-8')))
 	  f.write(', offered: ')
-	  f.write(str(offered).encode('utf-8'))
+	  f.write(str(str(offered).encode('utf-8')))
 	  f.write("}},\n")
 	  #write to edge file
 	  for pre in pres:
-	  	f2.write("{ data: { id: '"+str(i)+"', source: '"+pre.encode('utf-8')+"', target: '"+title.encode('utf-8')+"' } },\n")
-	  i += 1
+	  	f2.write("{ data: { id: '"+str(i)+"', source: '"+str(pre.encode('utf-8'))+"', target: '"+str(title.encode('utf-8'))+"' } },\n")
+	  	i += 1
 
 
 
