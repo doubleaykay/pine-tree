@@ -1,4 +1,4 @@
-edges=[
+edges:[
 { data: { id: '1', source: 'ANTH 6', target: 'ANTH 43' } },
 { data: { id: '2', source: 'ARAB 3', target: 'ARAB 22' } },
 { data: { id: '3', source: 'ARAB 3', target: 'ARAB 23' } },
@@ -1282,3 +1282,4 @@ edges=[
 { data: { id: '1281', source: 'SART 20', target: 'SART 71' } },
 { data: { id: '1282', source: 'SART 31', target: 'SART 72' } },
 { data: { id: '1283', source: 'SART 21', target: 'SART 73' } },
+],
