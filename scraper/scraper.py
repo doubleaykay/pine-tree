@@ -43,21 +43,21 @@ for link in links.links:
 	  #print offeredtexts
 	  #print distribtexts
 	  f.write('{ data: { id: "')
-	  f.write(str(title.encode('utf-8')))
+	  f.write(str(title))
 	  f.write('", class: "')
-	  f.write(str(title.encode('utf-8')))
+	  f.write(str(title))
 	  f.write('", title: \'')
-	  f.write(str(fulltitle.encode('utf-8')).replace("'", "\\'").replace('"', '\\"'))
+	  f.write(str(fulltitle).replace("'", "\\'").replace('"', '\\"'))
 	  f.write('\', prereqs: ')
-	  f.write(str(str(pres).encode('utf-8')))
+	  f.write(str(str(pres)))
 	  f.write(', distribs: ')
-	  f.write(str(str(distribs).encode('utf-8')))
+	  f.write(str(str(distribs)))
 	  f.write(', offered: ')
-	  f.write(str(str(offered).encode('utf-8')))
+	  f.write(str(str(offered)))
 	  f.write("}},\n")
 	  #write to edge file
 	  for pre in pres:
-	  	f2.write("{ data: { id: '"+str(i)+"', source: '"+str(pre.encode('utf-8'))+"', target: '"+str(title.encode('utf-8'))+"' } },\n")
+	  	f2.write("{ data: { id: '"+str(i)+"', source: '"+str(pre)+"', target: '"+str(title)+"' } },\n")
 	  	i += 1
 
 
