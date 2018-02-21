@@ -1,6 +1,10 @@
 var cy = cytoscape({
   container: document.getElementById('cy'),
 
+  layout: {
+    name: 'klay',
+  },
+
   style: [
     {
       selector: 'node',
@@ -78,10 +82,6 @@ var cy = cytoscape({
       }
     },
   ],
-
-  layout: {
-    name: 'dagre',
-  },
 
   elements: {
     nodes:[
