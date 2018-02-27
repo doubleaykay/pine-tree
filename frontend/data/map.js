@@ -36,12 +36,10 @@ cy.batch(function(){
 
     if ( id.includes("MATH") ){
       makeVisible();
-    } else {
-      makeInVisible();
     };
 
     if( type != 'visible' ){
-      cy.elements().remove();
+      cy.nodes().remove();
     };
   });
 });
