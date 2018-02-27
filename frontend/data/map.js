@@ -1,9 +1,9 @@
 var cy = cytoscape({
   container: document.getElementById('cy'),
 
-  layout: {
-    name: 'klay',
-  },
+  //layout: {
+    //name: 'klay',
+  //},
 
   style: GraphStyle,
 
@@ -13,33 +13,25 @@ var cy = cytoscape({
   },
 });
 
-//cy.elements().remove();
-//var aaas = cy.nodes().data("id").includes("AAAS");
-//var aaas = $('id').includes('AAAS');
-//cy.elements().add(nodes.getElementById('MATH 013'));
-
-var allNodes = cy.nodes();
-cy.batch(function(){
-  allNodes.forEach(function( n ){
-    var type = n.data('NodeVisibility');
-    var id = n.data("id");
-
-    // remove the visible class from all nodes
-    var makeInVisible = function(){
-      n.removeClass('visible');
-    };
-
-    // make nodes visible again
-    var makeVisible = function(){
-      n.addClass('visible');
-    };
-
-    if ( id.includes("MATH") ){
-      makeVisible();
-    };
-
-    if( type != 'visible' ){
-      cy.nodes().remove();
-    };
-  });
+var layout = cy.layout({
+  name: 'klay'
 });
+layout.run();
+
+function filterMath() {
+  var checkBox = document.getElementById("checkMath");
+  var math = cy.filter(function( n ){
+    if(n.data("target")){
+      return n.data("target").includes("MATH")||n.data("source").includes("MATH");
+    } else {
+      return n.data("id").includes("MATH");
+    }
+  });
+  if (checkBox.checked){
+    math.restore();
+    //layout.run();
+  } else {
+    math.remove();
+    //layout.run();
+  }
+}
